@@ -28,6 +28,9 @@ public class Account {
 
 /**
  * volatile не спасает если операции не атомарные
+ * В данном примере используется synchronized для возникновения DeadLock
+ *Сначала захватывается объект ac1,данный потом оставнавливается на 1000 сек
+ * Что порождает запуск другого потока который пытается получить доступ к ac1 и захватывает ac2
  */
 class Operations {
     public static void main(String[] args) throws InsufficientResourcesException {
@@ -47,7 +50,16 @@ class Operations {
         if (ac1.getBalance() < amount) {
             throw new InsufficientResourcesException();
         }
-        ac1.withdraw(amount);
-        ac2.deposit(amount);
+        synchronized (ac1){
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            synchronized (ac2){
+                ac1.withdraw(amount);
+                ac2.deposit(amount);
+            }
+        }
     }
 }
