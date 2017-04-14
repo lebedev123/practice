@@ -23,5 +23,4 @@ public class Concurrency {
         Collections.fill(copyOnWriteArrayList,100);
         System.out.println("List synchronized: ");
     }
-
 }

@@ -4,7 +4,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.PriorityBlockingQueue;
 
 /**
- *вынуждает поток блокироватьс при попытке ввести элемент в переполненую очередь или удалить из пустой
+ *вынуждает поток блокироваться при попытке ввести элемент в переполненую очередь или удалить из пустой
  */
 public class BlockingQueues {
     public static void main(String[] args) {
