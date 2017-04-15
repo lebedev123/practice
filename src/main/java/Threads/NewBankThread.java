@@ -10,14 +10,14 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * Created by dos on 08.02.2017.
  */
-public class NewBankThread{
-    public static final int NACCOUNTS = 100;
+public class NewBankThread {
+    public static final int NACCOUNTS = 10;
     public static final double INITAL_BALANCE = 1000;
     public static final double MAX_AMOUNT = 1000;
     public static final int DELAY = 10;
 
     public static void main(String[] args) {
-        Bank bank = new Bank(NACCOUNTS, INITAL_BALANCE);
+        newBank bank = new newBank(NACCOUNTS, INITAL_BALANCE);
         for (int i = 0; i < NACCOUNTS; i++) {
             int fromAccount = i;
             Runnable r = () -> {
@@ -38,10 +38,9 @@ public class NewBankThread{
 
 }
 
-
 class newBank {
     private final double[] accounts;
-    private Lock bankLock ;
+    private Lock bankLock;
     private Condition sufficientFunds;
 
     public newBank(int n, double initialBalance) {
@@ -53,11 +52,11 @@ class newBank {
 
     }
 
-    public void transfer(int from, int to, double amount) throws InterruptedException{
+    public void transfer(int from, int to, double amount) throws InterruptedException {
 
         bankLock.lock();
         try {
-            while(accounts[from]<amount)
+            while (accounts[from] < amount)
                 sufficientFunds.await();
             System.out.println(Thread.currentThread());
             accounts[from] -= amount;
@@ -65,7 +64,7 @@ class newBank {
             accounts[to] += amount;
             System.out.printf(" Total balance: %10.2f%n", getTotalBalance());
             sufficientFunds.signalAll();
-        }finally {
+        } finally {
             bankLock.unlock();
         }
     }

@@ -31,8 +31,9 @@ public class WaitAndNotify {
                         e.printStackTrace();
                     }
                     System.out.println("Current thread " + Thread.currentThread());
-                    System.out.println("Before --");
+                    System.out.println("count  --");
                     test.count--;
+                    System.out.println("Before notify");
                     test.notifyAll();
                     System.out.println("After thread " + Thread.currentThread());
                 }

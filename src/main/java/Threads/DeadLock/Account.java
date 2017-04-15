@@ -1,9 +1,11 @@
 package Threads.DeadLock;
 
 import javax.naming.InsufficientResourcesException;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Account {
     private int balance;
+
 
     public Account(int balance) {
         this.balance = balance;
@@ -31,6 +33,7 @@ public class Account {
  * В данном примере используется synchronized для возникновения DeadLock
  *Сначала захватывается объект ac1,данный потом оставнавливается на 1000 сек
  * Что порождает запуск другого потока который пытается получить доступ к ac1 и захватывает ac2
+ * Проверка состояния deadlock команды: jps and jstack + id process
  */
 class Operations {
     public static void main(String[] args) throws InsufficientResourcesException {

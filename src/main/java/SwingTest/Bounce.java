@@ -1,4 +1,4 @@
-package Threads;
+package SwingTest;
 
 import javax.swing.*;
 import java.awt.*;
