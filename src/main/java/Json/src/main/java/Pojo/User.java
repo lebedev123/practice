@@ -1,4 +1,4 @@
-package Pojo;
+package Json.src.main.java.Pojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;

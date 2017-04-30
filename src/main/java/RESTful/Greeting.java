@@ -1,3 +1,5 @@
+package RESTful;
+
 public class Greeting {
 
     private final long id;
