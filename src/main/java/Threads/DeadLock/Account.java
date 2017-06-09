@@ -37,8 +37,8 @@ public class Account {
  */
 class Operations {
     public static void main(String[] args) throws InsufficientResourcesException {
-        final Account a = new Account(1000);
-        final Account b = new Account(2000);
+        Account a = new Account(1000);
+         Account b = new Account(2000);
         new Thread(() -> {
             try {
                 transfer(a,b,500);
