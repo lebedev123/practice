@@ -42,7 +42,7 @@ public class QuizCardBuilder {
         aScroller.setVerticalScrollBarPolicy(ScrollPaneLayout.VERTICAL_SCROLLBAR_ALWAYS);
         aScroller.setHorizontalScrollBarPolicy(ScrollPaneLayout.HORIZONTAL_SCROLLBAR_NEVER);
 
-        JButton nextButton = new JButton("Next Card");
+        JButton nextButton = new JButton("Observer Card");
 
         cardList = new ArrayList<QuizCard>();
         JLabel qLabel = new JLabel("Question");

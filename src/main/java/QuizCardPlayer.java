@@ -53,7 +53,7 @@ public class QuizCardPlayer {
         public void actionPerformed(ActionEvent e) {
             if(isShowAnswer){
                 display.setText(currentCard.getAnswer());
-                nextButton.setText("Next card");
+                nextButton.setText("Observer card");
                 isShowAnswer = false;
             }else{
                 if(currentCardIndex<cardList.size()){
