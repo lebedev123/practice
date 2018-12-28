@@ -1,5 +1,7 @@
 package Threads;
 
+import java.util.TreeMap;
+import java.util.TreeSet;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -27,6 +29,7 @@ public class TryLockWithConditions implements Runnable {
             e.printStackTrace();
         }
     }
+
 
     private void increment() throws InterruptedException {
         while (i < 10) {

@@ -4,7 +4,7 @@ import DesignPatterns.Pattreni_proektirovaniya.Decorator.Beverage;
 import DesignPatterns.Pattreni_proektirovaniya.Decorator.CondimentDecorator;
 
 /**
- * Кдасс дополнения(молоко) к напитку который инкапсулирует в себе напиток и
+ * Класс дополнения(молоко) к напитку который инкапсулирует в себе напиток и
  * расширияет его функциональность тем самым добавляя стоимость кофе к стоимости молока.
  * Это позволяет создать различные комбинации напитком и дополнений.
  */
