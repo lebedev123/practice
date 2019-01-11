@@ -14,15 +14,3 @@ public class LambdaTest {
 
 }
 
-
-interface  A1 {
-    String getString () throws Exception;
-}
-
-class B1 implements  A1{
-
-    @Override
-    public String getString() throws Exception {
-        return null;
-    }
-}
